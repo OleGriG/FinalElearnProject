@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+    {% autoescape on %}
+    {{ profession.description | safe }}
+    {% endautoescape %},
+    {% if profession.image %}
+         <img src="{{ profession.image.url }}" alt="">
+    {% endif %}
+
+{% endblock %}

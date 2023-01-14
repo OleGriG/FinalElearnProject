@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block main %}
+    {% for vacancy in vacancies %}
+        <div class="vacancy">
+            <h1>{{ vacancy.name }}</h1>
+        <ul>
+            {% for li in vacancy.misc %}
+                {% if li %}
+                    <li>{{ li | safe }}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+        <hr class="hr-horizontal-gradient">
+    {% endfor %}
+
+{% endblock %}

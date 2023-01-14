@@ -1,0 +1,56 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block head %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+<header>
+    <img src="{% static 'img/logo.png' %}" alt="">
+    <h1>ERP-специалист</h1>
+</header>
+
+<main>
+    <div class="div-blabla">
+    <nav>
+        <ul>
+            <li>
+                <a href="{% url 'index' %}">О профессии</a>
+            </li>
+            <hr>
+            <li>
+                <a href="{% url 'relevance' %}">Востребованность</a>
+            </li>
+            <hr>
+            <li>
+                <a href="{% url 'geo' %}">География</a>
+            </li>
+            <hr>
+            <li>
+                <a href="{% url 'skills' %}"><span>Навыки</span></a>
+            </li>
+            <hr>
+            <li>
+                <a href="{% url 'vacancies' %}"><span>Последние вакансии</span></a>
+            </li>
+            <hr>
+        </ul>
+    </nav>
+    </div>
+
+    <div class="main">
+        {% block main %}
+        {% endblock %}
+    </div>
+</main>
+
+<footer>
+    <span>Григорьев Олег Андреевич</span>
+    <span>РИ-210910</span>
+</footer>
+</body>
+</html>
